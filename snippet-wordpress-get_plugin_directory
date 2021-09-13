@@ -1,0 +1,30 @@
+<?php
+/**
+ * Plugin Name: Snippet Get Plugin Directory
+ * Version: 1.0.0
+ * Plugin URI: https://github.com/andrenellin/bliksem-relationships
+ * Description: Specify parent child relationships between users
+ * Author: Andre Nell
+ * Author URI: http://www.andrenell.me/
+ *
+ *
+ * @package Bliksem
+ * @author Andre Nell
+ * @since 1.0.0
+ */
+
+if (! function_exists('get_option')) {
+    header('HTTP/1.0 403 Forbidden');
+    die;  // Silence is golden, direct call is prohibited
+}
+
+// DEFINE CONSTANTS
+define('BS_NAME_VERSION', '1.0.1');
+define('BS_NAME_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('BS_NAME_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('BS_NAME_PLUGIN_BASE_NAME', plugin_basename(__FILE__));
+define('BS_NAME_PLUGIN_FILE', basename(__FILE__));
+define('BS_NAME_PLUGIN_FULL_PATH', __FILE__);
+
+// IMPLEMENTATION
+require_once(BS_NAME_PLUGIN_DIR.'includes/filename.php');
